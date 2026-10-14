@@ -153,22 +153,44 @@ namespace C_OOP05
             
             Shipment shipment2 = shipment1;
 
-        
-            Shipment copiedShipment = shipment1.CopyShipment();
-
-      
-            bool isSameObject = (shipment1 == shipment2);
-            Console.WriteLine($"Same Object (Reference Assignment): {isSameObject}"); 
-
-            
-            bool isSameCopy = (shipment1 == copiedShipment);
-            Console.WriteLine($"Same Object (CopyShipment): {isSameCopy}"); 
+            //Shipment copiedShipment = shipment1.CopyShipment();
 
 
+            //bool isSameObject = (shipment1 == shipment2);
+            //Console.WriteLine($"Same Object (Reference Assignment): {isSameObject}"); 
+
+
+            //bool isSameCopy = (shipment1 == copiedShipment);
+            //Console.WriteLine($"Same Object (CopyShipment): {isSameCopy}"); 
 
             #endregion
 
 
+            #region (Q2) Shallow Copy
+
+            
+            Shipment shallowCopied = shipment1.ShallowCopy();
+
+            Console.WriteLine("------------ Before Changes ------------");
+            Console.WriteLine($"shipment1 (Original) Hash: {shipment1.GetHashCode()} | City: {shipment1.Destination.City}");
+            Console.WriteLine($"shipment2 (Assigned) Hash: {shipment2.GetHashCode()} | City: {shipment2.Destination.City}");
+            Console.WriteLine($"shallowCopied Hash     : {shallowCopied.GetHashCode()} | City: {shallowCopied.Destination.City}");
+
+         
+            Console.WriteLine("\n------------ After Changing shallowCopied Address ------------");
+            shallowCopied.Destination.City = "Giza";
+
+            Console.WriteLine($"shipment1 (Original) City: {shipment1.Destination.City}"); 
+            Console.WriteLine($"shallowCopied City     : {shallowCopied.Destination.City}");
+
+            
+            Console.WriteLine($"Same Shipment Object (shipment1 vs shallowCopied): {ReferenceEquals(shipment1, shallowCopied)}");
+
+           
+            Console.WriteLine($"Same DeliveryAddress Object: {ReferenceEquals(shipment1.Destination, shallowCopied.Destination)}");
+
+
+            #endregion
 
             #endregion
         }

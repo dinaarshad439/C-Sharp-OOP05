@@ -138,7 +138,10 @@ namespace C_OOP05.Classes
             return new StandardShipment(TrackingCode, Description, Weight, DeliveryFee, Destination, status);
         }
 
-        
+        public Shipment ShallowCopy()
+        {
+            return (Shipment)this.MemberwiseClone();
+        }
 
 
         #endregion
