@@ -88,6 +88,29 @@
 
             #endregion
 
+            #region (Q4) Extension Methods
+
+            // (a)
+            /*
+             * Add new method to existing types without modifying original class or creating new class.
+             */
+
+            //(b)
+            /*
+             * First parameter must use this keyword.
+             */
+
+            // (c)
+            /*
+             * It must be declared as a static method inside a static class.
+             */
+
+            //(d)
+            /*
+             * No, it cannot access private members because they are not part of type.
+             */
+            #endregion
+
             #endregion
         }
     }
