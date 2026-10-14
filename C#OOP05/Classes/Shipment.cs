@@ -143,7 +143,23 @@ namespace C_OOP05.Classes
             return (Shipment)this.MemberwiseClone();
         }
 
+        public Shipment DeepCopy()
+        {
+            
+            Shipment deepCopyShipment = (Shipment)this.MemberwiseClone();
 
+        
+            if (this.Destination != null)
+            {
+                deepCopyShipment.Destination = new DeliveryAddress(
+                    this.Destination.City,
+                    this.Destination.Street,
+                    this.Destination.BuildingNumber
+                );
+            }
+
+            return deepCopyShipment;
+        }
         #endregion
 
     }

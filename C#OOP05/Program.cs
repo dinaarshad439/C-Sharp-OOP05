@@ -169,26 +169,51 @@ namespace C_OOP05
             #region (Q2) Shallow Copy
 
             
-            Shipment shallowCopied = shipment1.ShallowCopy();
+            //Shipment shallowCopied = shipment1.ShallowCopy();
+
+            //Console.WriteLine("------------ Before Changes ------------");
+            //Console.WriteLine($"shipment1 (Original) Hash: {shipment1.GetHashCode()} | City: {shipment1.Destination.City}");
+            //Console.WriteLine($"shipment2 (Assigned) Hash: {shipment2.GetHashCode()} | City: {shipment2.Destination.City}");
+            //Console.WriteLine($"shallowCopied Hash     : {shallowCopied.GetHashCode()} | City: {shallowCopied.Destination.City}");
+
+         
+            //Console.WriteLine("\n------------ After Changing shallowCopied Address ------------");
+            //shallowCopied.Destination.City = "Giza";
+
+            //Console.WriteLine($"shipment1 (Original) City: {shipment1.Destination.City}"); 
+            //Console.WriteLine($"shallowCopied City     : {shallowCopied.Destination.City}");
+
+            
+            //Console.WriteLine($"Same Shipment Object (shipment1 vs shallowCopied): {ReferenceEquals(shipment1, shallowCopied)}");
+
+           
+            //Console.WriteLine($"Same DeliveryAddress Object: {ReferenceEquals(shipment1.Destination, shallowCopied.Destination)}");
+
+
+            #endregion
+
+
+            #region (Q3) Deep Copy
+
+            Shipment DeepCopied = shipment1.DeepCopy();
 
             Console.WriteLine("------------ Before Changes ------------");
             Console.WriteLine($"shipment1 (Original) Hash: {shipment1.GetHashCode()} | City: {shipment1.Destination.City}");
             Console.WriteLine($"shipment2 (Assigned) Hash: {shipment2.GetHashCode()} | City: {shipment2.Destination.City}");
-            Console.WriteLine($"shallowCopied Hash     : {shallowCopied.GetHashCode()} | City: {shallowCopied.Destination.City}");
+            Console.WriteLine($"DeepCopied Hash     : {DeepCopied.GetHashCode()} | City: {DeepCopied.Destination.City}");
 
-         
-            Console.WriteLine("\n------------ After Changing shallowCopied Address ------------");
-            shallowCopied.Destination.City = "Giza";
 
-            Console.WriteLine($"shipment1 (Original) City: {shipment1.Destination.City}"); 
-            Console.WriteLine($"shallowCopied City     : {shallowCopied.Destination.City}");
+            Console.WriteLine("\n------------ After Changing DeepCopied Address ------------");
+            DeepCopied.Destination.City = "Giza";
 
-            
-            Console.WriteLine($"Same Shipment Object (shipment1 vs shallowCopied): {ReferenceEquals(shipment1, shallowCopied)}");
+            Console.WriteLine($"shipment1 (Original) City: {shipment1.Destination.City}");
+            Console.WriteLine($"DeepCopied City     : {DeepCopied.Destination.City}");
 
-           
-            Console.WriteLine($"Same DeliveryAddress Object: {ReferenceEquals(shipment1.Destination, shallowCopied.Destination)}");
 
+            Console.WriteLine($"Same Shipment Object (shipment1 vs DeepCopied): {ReferenceEquals(shipment1, DeepCopied)}");
+
+
+            Console.WriteLine($"Same DeliveryAddress Object: {ReferenceEquals(shipment1.Destination, DeepCopied.Destination)}");
 
             #endregion
 
