@@ -57,6 +57,37 @@
 
             #endregion
 
+            #region (Q3) Static Members
+
+            // (a)
+            /*
+             * Static Field: Belongs to the class itself rather than any specific object
+             * there is only one copy of a static field shared across all instances.
+             * 
+             * Instance Field: Belongs to a specific object instance Every time you create a new object using the new keyword 
+             * a new copy of the instance field is allocated in memory for that specific object.
+             */
+
+            // (b)
+            /*
+             * Static Method: A method that belongs to the class itself and can be called without creating Object of the class.
+             * No, not directly. Because static methods Can be called without creating object.
+             */
+
+            // (c)
+            /*
+             * Static Constructor: A special constructor used to initialize static fields and cannot have access modifer.
+             * It runs once automatically before any static member is used.
+             */
+
+            // (d)
+            /*
+             * Static class: class cannot create object from it and contaion only static members.
+             * No, You cannot create object from it.
+             */
+
+            #endregion
+
             #endregion
         }
     }
