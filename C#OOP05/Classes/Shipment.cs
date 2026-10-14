@@ -8,7 +8,7 @@ namespace C_OOP05.Classes
     /// <summary>
     /// Represents a shipment with tracking, delivery, destination, and cost information.
     /// </summary>
-    internal abstract class Shipment : ITrackable, IInsurable
+    internal abstract partial class Shipment : ITrackable, IInsurable
     {
         #region Private Fields
 
@@ -136,12 +136,15 @@ namespace C_OOP05.Classes
             return 0;
         }
 
+        
+        partial void OnTrackingStatusChanged(string newStatus)
+        {
+            Console.WriteLine($"Tracking status changed to: {newStatus}");
+        }
+
         public abstract void PrintShipment();
 
-        public string GetTrackingStatus()
-        {
-            return $"Shipment {TrackingCode} is {status}.";
-        }
+        
 
         public abstract decimal CalculateInsurance();
 
