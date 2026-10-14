@@ -16,6 +16,7 @@ namespace C_OOP05.Classes
         string? description;
         decimal weight;
         decimal deliveryFee;
+        static int TotalShipmentsCreated=0;
 
         #endregion
 
@@ -82,6 +83,7 @@ namespace C_OOP05.Classes
             Weight = 1;
             DeliveryFee = 50;
             Destination = default;
+            TotalShipmentsCreated++;
         }
 
         public Shipment(string _trackingCode, string _description, decimal _weight, decimal _deliveryFee, DeliveryAddress _destination, string _status)
@@ -92,11 +94,23 @@ namespace C_OOP05.Classes
             DeliveryFee = _deliveryFee;
             Destination = _destination;
             status = _status;
+            TotalShipmentsCreated++;
+        }
+
+        static Shipment()
+        {
+            Console.WriteLine("Shipment System Initialized");
         }
 
         #endregion
 
         #region Methods
+
+        public static int GetTotalShipmentsCreated()
+        {
+            return TotalShipmentsCreated;
+        }
+
         public void UpdateDeliveryFee(decimal newFee)
         {
             if (newFee > 0)
