@@ -111,6 +111,31 @@
              */
             #endregion
 
+            #region (Q5) Partial Classes and Partial Methods 
+
+            // (a)
+            /*
+             * Allow you to divide class into multiple files complemented to each other and seen by compiler as one class.
+             */
+
+            // (b)
+            /*
+             * 1) to organize large classes into multiple files.
+             * 2)to improve maintainability and readability.
+             * 3) to separate auto generated code from custom code.
+             */
+
+            // (c)
+            /*
+             * declare method without implementation in the class so it may be implemented in another class.
+             */
+
+            // (d)
+            /*
+             * if you dont implement partial method the compiler will remove it.
+             */
+            #endregion
+
             #endregion
         }
     }
