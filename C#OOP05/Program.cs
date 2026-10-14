@@ -1,4 +1,7 @@
-﻿namespace C_OOP05
+﻿using C_OOP05.Classes;
+using C_OOP05.Struct;
+
+namespace C_OOP05
 {
     internal class Program
     {
@@ -135,6 +138,37 @@
              * if you dont implement partial method the compiler will remove it.
              */
             #endregion
+
+            #endregion
+
+            #region Practical Questions
+
+
+            #region (Q1) Object Copying
+
+            
+
+            Shipment shipment1 = new StandardShipment("SH001", "Standard", 3, 5,new DeliveryAddress("Cairo","Maadi",10), "In Transit");
+
+            
+            Shipment shipment2 = shipment1;
+
+        
+            Shipment copiedShipment = shipment1.CopyShipment();
+
+      
+            bool isSameObject = (shipment1 == shipment2);
+            Console.WriteLine($"Same Object (Reference Assignment): {isSameObject}"); 
+
+            
+            bool isSameCopy = (shipment1 == copiedShipment);
+            Console.WriteLine($"Same Object (CopyShipment): {isSameCopy}"); 
+
+
+
+            #endregion
+
+
 
             #endregion
         }
