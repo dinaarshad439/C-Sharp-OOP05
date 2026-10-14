@@ -27,6 +27,36 @@
 
             #endregion
 
+            #region (Q2) Shallow vs Deep Copies
+
+            // (a)
+            /*
+             * Create new object that copies value types and  for reference type fields only reference is copied
+             */
+
+            // (b)
+            /*
+             *  create new object that copies all nested objects so the original object and copyied object are independent.
+             */
+
+            //(c)
+            /*
+             * the original object and the shallow copy point to the exact same inner objects in memory
+             */
+
+            //(d)
+            /*
+             * the original object and the deep copy do not share any reference-type members, making them completely independent.
+             */
+
+            //(e)
+            /*
+             * A deep copy is much safer when you have a composite object containing mutable reference types
+             * If you modify the items list or the address in the copied object, a shallow copy would accidentally modify the original object's data too
+             */
+
+            #endregion
+
             #endregion
         }
     }
